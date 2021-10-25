@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #mostrar_boton{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <form method="post">
+            <label>Ingrese Nombre:</label> 
+            <input type="text" name="nombre" value="">
+            <label id="label_nombre"></label> <br>
+            <label>Ingrese label_contrasena </label> 
+            <input type="text" name="contrasena" value="">
+            <label id="label_contrasena"></label><br>
+            <input type="button" value="Mostrar boton2" name="vista2" onClick="mostrarBoton()">
+        </form>
+        
+        
+        <div id="mostrar_boton">
+            <a href="vista2.html"> ir vista2 siguiente</a>
+        </div>
+        
+        <script>
+             
+            function mostrarBoton(){
+                
+                let nombre = document.getElementsByName('nombre')[0].value;
+                let contrasena = document.getElementsByName('contrasena')[0].value;
+                let mostrar_boton = document.getElementById('mostrar_boton');
+                
+                let label_nombre = document.getElementById('label_nombre');
+                let label_contrasena = document.getElementById('label_contrasena');
+                
+                if(nombre === 'Marcelo'){
+                    label_nombre.innerHTML = 'OK';
+                    if(contrasena === 'CFT-PASS'){
+                        label_contrasena.innerHTML = 'OK';
+                        mostrar_boton.style.display = 'block';
+                    }else{
+                        label_contrasena.innerHTML = 'Contraseña no valida';
+                    }
+                }else{
+                    label_nombre.innerHTML = 'Nombre no validado';
+                }
+                
+                
+                
+                
+            }
+        </script>
+    </body>
+</html>
